@@ -1,0 +1,175 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block title %}Index{% endblock title %}
+
+{% block body %}
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<section class="section" id="section1">
+    <div>
+
+    </div>
+    <div class="container">
+        <img src="{% static 'images/ac1.png' %}" class="img" alt="Image 1">
+    </div>
+    <div class="col-md-8 text-content">
+        <h1 id="typed-title"></h1>
+        <p id="typed-text"></p>
+    </div>
+
+</section>
+<hr>
+<section class="section" id="installation">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 gallery-section">
+                <div class="gallery-images">
+                    <img src="{% static 'images/ac2.png' %}" class="img-fluid" alt="Image 1">
+                </div><br><br>
+            </div>
+            <div class="col-md-6 gallery-content">
+                <h2>AC Installation</h2>
+                <p>At OneCall Service, we provide professional AC installation services to ensure your home or office
+                    stays cool and comfortable. Our experienced technicians tailor each installation to meet your
+                    specific needs, guaranteeing optimal performance and efficiency from your new system.</p>
+
+            </div>
+            <div class="button-container">
+                <button class="btn">Call to Action</button>
+            </div><br>
+        </div>
+    </div>
+</section>
+<hr>
+
+<section class="section" id="repair">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 gallery-section">
+                <div class="gallery-images">
+                    <img src="{% static 'images/ac3.png' %}" class="img-fluid" alt="Image 1">
+                </div><br><br>
+            </div>
+            <div class="col-md-6 gallery-content">
+                <h2>AC Repair</h2>
+                <p>When your AC breaks down, you need fast and reliable repair services to restore your comfort. OneCall
+                    Service specializes in quick and effective AC repairs, diagnosing and fixing issues promptly to get
+                    your system back up and running smoothly.</p>
+
+            </div>
+            <div class="button-container1">
+                <button class="btn">Call to Action</button>
+            </div>
+        </div>
+    </div>
+</section>
+<hr>
+<section class="section" id="maintenence">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 gallery-section">
+                <div class="gallery-images">
+                    <img src="{% static 'images/ac4.png' %}" class="img-fluid" alt="Image 1">
+                </div><br><br>
+            </div>
+            <div class="col-md-6 gallery-content">
+                <h2>AC maintanence</h2>
+                <p>Regular maintenance is key to extending the life of your AC system and ensuring it runs efficiently.
+                    OneCall Service offers comprehensive AC maintenance services designed to prevent breakdowns and keep
+                    your unit operating at peak performance, saving you money on energy bills and costly repairs.</p>
+
+            </div>
+            <div class="button-container2">
+                <button class="btn">Call to Action</button>
+            </div><br><br>
+        </div>
+    </div>
+</section>
+<hr>
+<Section class="section" id="form">
+    <div class="container" id="form1">
+        <div class="row">
+            <div class="col-md-6 gallery-section">
+                <div class="gallery-images">
+                    <img src="{% static 'images/ac9.png' %}" class="img-fluid" alt="Image 1">
+                </div>
+            </div>
+            <div class="form1 col-md-6">
+                <h2>Contact Us Form</h2>
+                <form action="/action_page.php">
+                    <div class="row">
+                        <div class="col-75">
+                            <label for="fname">First Name</label>
+                            <input type="text" id="fname" name="firstname" placeholder="Your name..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-75">
+                            <label for="lname">Contact No</label>
+                            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-75">
+                            <label for="country">What you want</label>
+                            <select id="country" name="country">
+                                <option value="Installation">Installation</option>
+                                <option value="Repair">Repair</option>
+                                <option value="Maintanence">Maintanence</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-75">
+                            <label for="subject">Descriptio</label>
+                            <textarea id="subject" name="subject" placeholder="Write something.."></textarea>
+                        </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <button class="btn1" type="submit" value="Submit">submit</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+</Section>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        const title = "Welcome to OneCall Service";
+        const text = "Experience ultimate comfort with OneCall Service's experts for AC installation, maintenance, and repair services.";
+        const titleElement = document.getElementById('typed-title');
+        const textElement = document.getElementById('typed-text');
+        let titleIndex = 0;
+        let textIndex = 0;
+
+        function typeTitle() {
+            if (titleIndex < title.length) {
+                titleElement.innerHTML += title.charAt(titleIndex);
+                titleIndex++;
+                setTimeout(typeTitle, 50); // Adjust typing speed here (in milliseconds)
+            } else {
+                typeText(); // Start typing text after title is done
+            }
+        }
+
+        function typeText() {
+            if (textIndex < text.length) {
+                textElement.innerHTML += text.charAt(textIndex);
+                textIndex++;
+                setTimeout(typeText, 50); // Adjust typing speed here (in milliseconds)
+            }
+        }
+
+        typeTitle();
+    });
+
+</script>
+
+{% endblock body %}
